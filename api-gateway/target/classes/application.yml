@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: department-info-service
+          uri: lb://department-info-service
+          predicates:
+            - Path=/Department/**
+server:
+ port: 8083   
+  
+            
